@@ -129,6 +129,10 @@ elif [[ "$CMSSW_VERSION" == CMSSW_10_*_* ]]; then
     echo " - Basic Code"
 
     github-addext latinos/LatinoAnalysis.git LatinoAnalysis
+    for i in LatinoAnalysis/NanoGardener/python/data/DYSFmva/201*_alt/TMVAClassification_PyKeras_201*.weightsORIG.xml; do 
+        cp ${i} ${i/ORIG/}
+        sed -i "s|RPLME_CMSSW_BASE|${CMSSW_BASE}|" ${i/ORIG/}
+    done
 
     echo " - Nano Tools"
 
