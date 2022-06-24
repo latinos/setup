@@ -222,10 +222,10 @@ elif [[ "$CMSSW_VERSION" == CMSSW_12_*_* ]]; then
     echo " - Nano Tools"
 
     git clone git@github.com:cms-nanoAOD/nanoAOD-tools.git PhysicsTools/NanoAODTools
-    cd  PhysicsTools/NanoAODTools
     #should not be needed anymore for UL
+    #cd  PhysicsTools/NanoAODTools
     #git checkout a4b3c03
-    cd -;
+    #cd -;
     cp LatinoAnalysis/Tools/data/JECs/*txt PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/Tools/data/JECs/*tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Summer16_25nsV1b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
