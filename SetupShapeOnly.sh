@@ -244,9 +244,15 @@ elif [[ "$CMSSW_VERSION" == CMSSW_12_*_* ]]; then
     echo " - MELA"
 
     git clone git@github.com:MELALabs/MelaAnalytics.git MelaAnalytics
-    cd MelaAnalytics ; git checkout -b from-v22 v2.2 ; cd ..
-    git clone https://github.com/JHUGen/JHUGenMela.git JHUGenMELA
-    cd JHUGenMELA; git checkout -b from-v235 v2.3.5 ; source setup.sh -j 12 ; cd ..
+    cd MelaAnalytics ; git checkout -b from-v21 v2.1 ; cd ..
+    git clone https://github.com/cms-analysis/HiggsAnalysis-ZZMatrixElement.git ZZMatrixElement
+    cd ZZMatrixElement ; git checkout -b from-v223 v2.2.3 ; source setup.sh -j 12 ; cd ..
+
+#   git clone git@github.com:MELALabs/MelaAnalytics.git MelaAnalytics
+#   cd MelaAnalytics ; git checkout -b from-v22 v2.2 ; cd ..
+#   git clone https://github.com/JHUGen/JHUGenMela.git JHUGenMELA
+#   cd JHUGenMELA; git checkout -b from-v235 v2.3.5 ; source setup.sh -j 12 ; cd ..
+
 
     echo " - Correction Lib" 
     git clone ssh://git@gitlab.cern.ch:7999/cms-nanoAOD/jsonpog-integration.git 
