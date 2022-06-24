@@ -214,7 +214,8 @@ elif [[ "$CMSSW_VERSION" == CMSSW_12_*_* ]]; then
 
     echo " - Basic Code"
 
-    github-addext latinos/LatinoAnalysis.git LatinoAnalysis
+    #github-addext latinos/LatinoAnalysis.git LatinoAnalysis
+    git clone git@github.com:latinos/LatinoAnalysis.git LatinoAnalysis
     cd LatinosAnalysis
     git checkout UL_production 
     cd - 
