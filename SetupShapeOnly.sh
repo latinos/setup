@@ -216,7 +216,7 @@ elif [[ "$CMSSW_VERSION" == CMSSW_12_*_* ]]; then
 
     #github-addext latinos/LatinoAnalysis.git LatinoAnalysis
     git clone git@github.com:latinos/LatinoAnalysis.git LatinoAnalysis
-    cd LatinosAnalysis
+    cd LatinoAnalysis
     git checkout UL_production 
     cd - 
 
