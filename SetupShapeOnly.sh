@@ -126,20 +126,21 @@ elif [[ "$CMSSW_VERSION" == CMSSW_10_*_* ]]; then
     echo "checking out additional repositories; this could take a while ..."
     echo "======================================="
 
+    echo "++++++++++++ WARNING: Assuming UL setup: using UL_production branch +++++++++++++"
+
     echo " - Basic Code"
 
-    github-addext latinos/LatinoAnalysis.git LatinoAnalysis
-    for i in LatinoAnalysis/NanoGardener/python/data/DYSFmva/201*_alt/TMVAClassification_PyKeras_201*.weightsORIG.xml; do 
-        cp ${i} ${i/ORIG/}
-        sed -i "s|RPLME_CMSSW_BASE|${CMSSW_BASE}|" ${i/ORIG/}
-    done
+    git clone git@github.com:latinos/LatinoAnalysis.git LatinoAnalysis
+    cd LatinoAnalysis
+    git checkout UL_production
+    cd -
 
     echo " - Nano Tools"
 
     git clone git@github.com:cms-nanoAOD/nanoAOD-tools.git PhysicsTools/NanoAODTools
-    cd  PhysicsTools/NanoAODTools
-    git checkout a4b3c03
-    cd -;
+#   cd  PhysicsTools/NanoAODTools
+#   git checkout a4b3c03
+#   cd -;
     cp LatinoAnalysis/Tools/data/JECs/*txt PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/Tools/data/JECs/*tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Summer16_25nsV1b_MC.tgz PhysicsTools/NanoAODTools/data/jme/ 
@@ -162,6 +163,18 @@ elif [[ "$CMSSW_VERSION" == CMSSW_10_*_* ]]; then
     git clone https://github.com/JHUGen/JHUGenMela.git JHUGenMELA
     cd JHUGenMELA; git checkout -b from-v235 v2.3.5 ; source setup.sh -j 12 ; cd ..
 
+
+    scram b -j 8
+
+    echo " - Correction Lib"
+    git clone ssh://git@gitlab.cern.ch:7999/cms-nanoAOD/jsonpog-integration.git
+    git clone --recursive git@github.com:cms-nanoAOD/correctionlib.git
+    cd correctionlib
+    make PYTHON=python
+    make install
+    cp -R correctionlib $CMSSW_BASE/src/LatinoAnalysis/NanoGardener/python/modules
+    cd -
+
 elif [[ "$CMSSW_VERSION" == CMSSW_11_0_* ]]; then
     echo "======================================="
     echo "running with $CMSSW_VERSION - this is a 13 TeV setup!"
@@ -169,16 +182,24 @@ elif [[ "$CMSSW_VERSION" == CMSSW_11_0_* ]]; then
     echo "checking out additional repositories; this could take a while ..."
     echo "======================================="
 
+    echo "++++++++++++ WARNING: Assuming UL setup: using UL_production branch +++++++++++++"
+
     echo " - Basic Code"
 
-    github-addext latinos/LatinoAnalysis.git LatinoAnalysis
+    #github-addext latinos/LatinoAnalysis.git LatinoAnalysis
+    git clone git@github.com:latinos/LatinoAnalysis.git LatinoAnalysis
+    cd LatinoAnalysis
+    git checkout UL_production
+    cd -
+
+
 
     echo " - Nano Tools"
 
     git clone git@github.com:cms-nanoAOD/nanoAOD-tools.git PhysicsTools/NanoAODTools
-    cd  PhysicsTools/NanoAODTools
-    git checkout a4b3c03
-    cd -;
+#   cd  PhysicsTools/NanoAODTools
+#   git checkout a4b3c03
+#   cd -;
     cp LatinoAnalysis/Tools/data/JECs/*txt PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/Tools/data/JECs/*tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Summer16_25nsV1b_MC.tgz PhysicsTools/NanoAODTools/data/jme/ 
@@ -200,6 +221,16 @@ elif [[ "$CMSSW_VERSION" == CMSSW_11_0_* ]]; then
     cd MelaAnalytics ; git checkout -b from-v22 v2.2 ; cd ..
     git clone https://github.com/JHUGen/JHUGenMela.git JHUGenMELA
     cd JHUGenMELA; git checkout -b from-v235 v2.3.5 ; source setup.sh -j 12 ; cd ..
+
+    scram b -j 8
+
+    echo " - Correction Lib"
+    git clone ssh://git@gitlab.cern.ch:7999/cms-nanoAOD/jsonpog-integration.git
+    git clone --recursive git@github.com:cms-nanoAOD/correctionlib.git
+    cd correctionlib
+    make PYTHON=python
+    make install
+    cp -R correctionlib $CMSSW_BASE/src/LatinoAnalysis/NanoGardener/python/modules
 
 
 elif [[ "$CMSSW_VERSION" == CMSSW_11_3_* ]]; then
