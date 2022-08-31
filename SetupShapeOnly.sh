@@ -143,6 +143,7 @@ elif [[ "$CMSSW_VERSION" == CMSSW_10_*_* ]]; then
 #   cd -;
     cp LatinoAnalysis/Tools/data/JECs/*txt PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/Tools/data/JECs/*tgz PhysicsTools/NanoAODTools/data/jme/
+    cp LatinoAnalysis/Tools/data/JERs/Summer19UL17_JRV2_MC.tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Summer16_25nsV1b_MC.tgz PhysicsTools/NanoAODTools/data/jme/ 
     cp LatinoAnalysis/NanoGardener/python/data/Fall17_V3b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Autumn18_V7b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
@@ -202,6 +203,7 @@ elif [[ "$CMSSW_VERSION" == CMSSW_11_0_* ]]; then
 #   cd -;
     cp LatinoAnalysis/Tools/data/JECs/*txt PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/Tools/data/JECs/*tgz PhysicsTools/NanoAODTools/data/jme/
+    cp LatinoAnalysis/Tools/data/JERs/Summer19UL17_JRV2_MC.tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Summer16_25nsV1b_MC.tgz PhysicsTools/NanoAODTools/data/jme/ 
     cp LatinoAnalysis/NanoGardener/python/data/Fall17_V3b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Autumn18_V7b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
@@ -261,6 +263,7 @@ elif [[ "$CMSSW_VERSION" == CMSSW_11_3_* ]]; then
     #cd -;
     cp LatinoAnalysis/Tools/data/JECs/*txt PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/Tools/data/JECs/*tgz PhysicsTools/NanoAODTools/data/jme/
+    cp LatinoAnalysis/Tools/data/JERs/Summer19UL17_JRV2_MC.tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Summer16_25nsV1b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Fall17_V3b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Autumn18_V7b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
@@ -317,6 +320,7 @@ elif [[ "$CMSSW_VERSION" == CMSSW_12_*_* ]]; then
     #cd -;
     cp LatinoAnalysis/Tools/data/JECs/*txt PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/Tools/data/JECs/*tgz PhysicsTools/NanoAODTools/data/jme/
+    cp LatinoAnalysis/Tools/data/JERs/Summer19UL17_JRV2_MC.tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Summer16_25nsV1b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Fall17_V3b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
     cp LatinoAnalysis/NanoGardener/python/data/Autumn18_V7b_MC.tgz PhysicsTools/NanoAODTools/data/jme/
