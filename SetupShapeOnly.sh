@@ -171,6 +171,10 @@ elif [[ "$CMSSW_VERSION" == CMSSW_10_*_* ]]; then
     git clone ssh://git@gitlab.cern.ch:7999/cms-nanoAOD/jsonpog-integration.git
     git clone --recursive git@github.com:cms-nanoAOD/correctionlib.git
     cd correctionlib
+    echo "   - enabling python2 bindings"
+    cd pybind11
+    git checkout v2.9.2
+    cd ..
     make PYTHON=python
     make install
     cp -R correctionlib $CMSSW_BASE/src/LatinoAnalysis/NanoGardener/python/modules
@@ -230,6 +234,10 @@ elif [[ "$CMSSW_VERSION" == CMSSW_11_0_* ]]; then
     git clone ssh://git@gitlab.cern.ch:7999/cms-nanoAOD/jsonpog-integration.git
     git clone --recursive git@github.com:cms-nanoAOD/correctionlib.git
     cd correctionlib
+    echo "   - enabling python2 bindings"
+    cd pybind11
+    git checkout v2.9.2
+    cd ..
     make PYTHON=python
     make install
     cp -R correctionlib $CMSSW_BASE/src/LatinoAnalysis/NanoGardener/python/modules
